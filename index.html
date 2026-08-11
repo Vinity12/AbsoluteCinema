@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Cinemas</title>
+    <style>
+      @font-face {
+        font-family: victor;
+        src: url("fonts/Victory Striker Sans Demo.otf");
+      }
+
+      @font-face {
+        font-family: rale;
+        src: url("fonts/Raleway-Light.ttf");
+      }
+
+      :root {
+        --mint: #3bba9c;
+        --darkest: #2e3047;
+        --mid: #43455c;
+        --dark: #3c3f5b;
+        --light: #707793;
+        --light-text: #bec9df;
+      }
+    
+      html, body {
+        scroll-behavior: smooth;
+        margin: 0;
+      }
+    
+      body {
+        backdrop-filter: blur(20px) brightness(0.15);
+        background-image: url("images/Arcane.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        font-size: 14px;
+        font-family: system-ui, -apple-system, sans-serif;
+        text-align: center;
+        color: white;
+        padding-top: 60px; 
+      }
+    
+      nav {
+        background-color: var(--dark);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+
+      a:hover {
+        cursor: pointer;
+      }
+      
+      #navOpt {
+        background-color: var(--mint);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 6vw;
+        height: 100%;
+      }
+      
+      .navi {
+        font-size: 16px;
+        text-decoration: none;
+        color: white;
+        padding: 0 1rem;
+      }
+
+      #logoSpace {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #logoName {
+        font-family: victor, sans-serif;
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        margin: 0;
+      }
+      
+      #logo {
+        margin-left: 6vw;
+        margin-right: 2vw;
+        width: 40px;
+        height: 40px;
+      }
+      
+      #title {
+        display: block;
+        font-family: victor, sans-serif;
+        font-size: 2.6rem;
+        padding: 5vh 0;
+      }
+
+
+
+      #details {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      #movie_name {
+        font-family: rale;
+        font-size: 2.6rem;
+        margin: 0;
+      }
+
+      #date {
+        font-family: rale;
+        color: var(--light-text);
+      }
+
+      #trailer_video {
+        min-height: 100%;
+        width: 60%;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+
+      @media only screen and (max-width: 700px) {
+        #trailer_video {
+          width: 100%;
+        }
+      }
+
+      #desc {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        max-width: 700px;
+        margin-bottom: 20px;
+        padding: 0 7vw;
+      }
+
+      #detail_cover {
+        background-image: url("images/Arcane.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 120px;
+        height: 200px;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+
+      #summary {
+        font-family: rale;
+        text-align: left;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      #star_icon {
+        width: 1em;
+        height: 1em;
+      }
+
+
+
+      .movie_list {
+        background-color: var(--darkest);
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        height: 210px;
+        width: 100%;
+      }
+      
+      .movie {
+        width: 100px;
+        height: 170px;
+        border-radius: 8px;
+        transition: transform 0.2s ease;
+        border: none;
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .movie_list {
+          height: 150px;
+        }
+
+        .movie {
+          width: 70px;
+          height: 130px;
+        }
+      }
+
+      .movie:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      #arcane {background-image: url("images/Arcane.jpg");}
+      #avatar {background-image: url("images/Avatar.jpg");}
+      #spiderverse {background-image: url("images/Spiderverse.jpg");}
+      #dune {background-image: url("images/Dune.jpg");}
+      #batman {background-image: url("images/Batman.jpg");}
+      #oppenheimer {background-image: url("images/Oppenheimer.jpg");}
+      #interstellar {background-image: url("images/Interstellar.jpg");}
+      #inception {background-image: url("images/Inception.jpg");}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="logoSpace">
+        <img id="logo" src="images/logo.png" alt="Absolute Cinema Logo">
+        <h2 id="logoName">AbsCin</h2>
+      </div>
+      <div id="navOpt">
+        <a class="navi" href="#home">HOME</a>
+        <a class="navi" href="#movies">MOVIES</a>
+      </div>
+    </nav>
+    
+    <header id="home">
+      <h1 id="title">Absolute Cinemas</h1>
+    </header>
+
+    <section id="details">
+      <h2 id="movie_name">ARCANE</h2>
+      <h3 id="date">2021-2024</h3>
+      <video id="trailer_video" src="videos/Arcane Trailer.mp4" controls></video>
+      <div id="desc">
+        <div id="detail_cover"></div> 
+        <p id="summary">
+          Two orphaned sisters, Vi and Powder, caught in a brutal conflict between the utopian,
+          wealthy city of Piltover and the oppressed underground mining district of Zaun. 
+        </p>
+      </div>
+      <span>
+        <img id="star_icon" src="SVGs/star.svg" alt="star">
+        <span id="rating_text">9/10</span>
+      </span>
+    </section>
+
+    <section id="movies">
+      <ul class="movie_list" id="top">
+        <li><button class="movie" id="arcane" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie"button id="avatar" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie" id="spiderverse" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie" id="dune" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie" id="batman" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie" id="oppenheimer" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie" id="interstellar" onclick="updateDetails(this.id)"></button></li>
+        <li><button class="movie" id="inception" onclick="updateDetails(this.id)"></button></li>
+      </ul>
+    </section>
+
+    <script>
+      const movieData = {
+        arcane: {
+          title: "ARCANE",
+          date: "2021-2024",
+          video: "videos/Arcane Trailer.mp4",
+          image: "images/Arcane.jpg",
+          summary: "Two orphaned sisters, Vi and Powder, caught in a brutal conflict between the utopian, wealthy city of Piltover and the oppressed underground mining district of Zaun.",
+          rating: "9/10"
+        },
+        avatar: {
+          title: "AVATAR: AANG",
+          date: "2026",
+          video: "videos/Avatar Trailer.mp4",
+          image: "images/Avatar.jpg",
+          summary: "Aang and his friends, now young adults, must face a mysterious new threat to the delicate balance of the four nations.",
+          rating: "TBD"
+        },
+        spiderverse: {
+          title: "ACROSS THE SPIDER-VERSE",
+          date: "2023",
+          video: "videos/Spiderverse Trailer.mp4",
+          image: "images/Spiderverse.jpg",
+          summary: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
+          rating: "8.6/10"
+        },
+        dune: {
+          title: "DUNE: PART TWO",
+          date: "2024",
+          video: "videos/Dune Trailer.mp4",
+          image: "images/Dune.jpg",
+          summary: "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
+          rating: "8.8/10"
+        },
+        batman: {
+          title: "THE BATMAN",
+          date: "2022",
+          video: "videos/Batman Trailer.mp4",
+          image: "images/Batman.jpg",
+          summary: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption.",
+          rating: "7.8/10"
+        },
+        oppenheimer: {
+          title: "OPPENHEIMER",
+          date: "2023",
+          video: "videos/Oppenheimer Trailer.mp4",
+          image: "images/Oppenheimer.jpg",
+          summary: "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+          rating: "8.3/10"
+        },
+        interstellar: {
+          title: "INTERSTELLAR",
+          date: "2014",
+          video: "videos/Interstellar Trailer.mp4",
+          image: "images/Interstellar.jpg",
+          summary: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+          rating: "8.7/10"
+        },
+        inception: {
+          title: "INCEPTION",
+          date: "2010",
+          video: "videos/Inception Trailer.mp4",
+          image: "images/Inception.jpg",
+          summary: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+          rating: "8.8/10"
+        }
+      };
+
+      const body = document.getElementsByTagName("body")
+      const detailsSection = document.getElementById("details");
+      const titleEl = document.getElementById("movie_name");
+      const dateEl = document.getElementById("date");
+      const videoEl = document.getElementById("trailer_video");
+      const coverEl = document.getElementById("detail_cover");
+      const summaryEl = document.getElementById("summary");
+      const ratingEl = document.getElementById("rating_text");
+
+      function updateDetails(id) {
+        const data = movieData[id];
+
+        body[0].style.backgroundImage = `url("${data.image}")`;
+        titleEl.textContent = data.title;
+        dateEl.textContent = data.date;
+        videoEl.src = data.video;
+        coverEl.style.backgroundImage = `url("${data.image}")`;
+        summaryEl.textContent = data.summary;
+        ratingEl.textContent = data.rating;
+s
+        titleEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
+  </body>
+</html>
