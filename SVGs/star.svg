@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <defs>
+  <symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" id="svg_2" viewBox="0 0 612 612">
+   <g id="svg_1">
+    <path d="m610.09,234c-4.59,-14.13 -16.81,-24.43 -31.51,-26.57l-164.16,-23.86l-73.41,-148.75c-6.58,-13.32 -20.15,-21.76 -35.01,-21.76c-14.86,0 -28.43,8.44 -35.01,21.76l-73.41,148.75l-164.16,23.86c-14.7,2.14 -26.92,12.44 -31.51,26.57s-0.76,29.64 9.88,40.01l118.79,115.79l-28.05,163.5c-2.51,14.64 3.51,29.44 15.53,38.18s27.96,9.88 41.11,2.97l146.83,-77.19l146.82,77.19c5.72,3 11.95,4.48 18.17,4.48c8.09,0 16.14,-2.51 22.95,-7.45c12.02,-8.74 18.04,-23.54 15.52,-38.18l-28.04,-163.5l118.79,-115.79c10.64,-10.37 14.47,-25.88 9.88,-40.01z" id="svg_4"/>
+   </g>
+  </symbol>
+ </defs>
+ <g class="layer" display="inline">
+  <title>Layer 1</title>
+  <use id="svg_3" href="#svg_2" fill="#eac43a" transform="matrix(0.797332 0 0 0.620504 0.642501 -7.75651)"/>
+ </g>
+</svg>
